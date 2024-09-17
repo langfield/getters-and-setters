@@ -10,7 +10,7 @@ import Control.Applicative (Const (..))
 data Coord = C !Int !Int
   deriving (Read, Show, Ord, Eq)
 
--- | Generalized list setter and getter.
+-- | Generalized list getter and setter.
 ix :: Applicative f => Int -> (a -> f a) -> [a] -> f [a]
 ix k f xs | k < 0     = pure xs
           | otherwise = go xs k where
